@@ -9,17 +9,17 @@
 
 ## Installation
 
-  cd somewhere-good
-  git clone https://github.com/doug65536/hellonode
-  cd hellonode
-  npm i
+    cd somewhere-good
+    git clone https://github.com/doug65536/hellonode
+    cd hellonode
+    npm i
 
 
 ## Run for debugging (auto-rerun on code changes)
-  npm run-script rerun
+    npm run-script rerun
 
 ## Run normally
-  npm run-script run
+    npm run-script run
 
 
 
