@@ -1,4 +1,4 @@
-let fs = require('fs'),
+const fs = require('fs'),
     process = require('process'),
     path = require('path');
 
