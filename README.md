@@ -19,6 +19,9 @@ around the value.
 - Relative paths are relative to the directory that contains the file 
 doing the include.
 - Absolute paths are relative to the root of the public directory tree.
+- Any amount of space is permitted before and after the
+quotes around the filename. There must be at least one space after include,
+but there is no requirement for spaces after the closing quote.
 
 ## Installation
 
