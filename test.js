@@ -1,13 +1,14 @@
 #!/bin/env node
 var express = require('express'),
+    cachingPreprocessor = require('./caching-preprocessor.js'),
     app = express(),
-    ipaddress = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
-    port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+    ipaddress = process.env.NODEJS_IP || '0.0.0.0',
+    port = process.env.NODEJS_PORT || 8080;
 
-app.get('/dumpenv', function(req, res) {
-    res.send(process.env);
-});
+app.use(cachingPreprocessor.interceptHtml);
 
-app.use(express.static('public/'));
+// Just serve the public/ directory for anything that didn't get caught
+// by the middleware above that intercepts everything that ends with .html
+app.use(express.static(cachingPreprocessor.getPublicDir()));
 app.listen(port, ipaddress);
 
