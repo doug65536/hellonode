@@ -119,10 +119,10 @@ function preprocessFile(pathname, includeStack) {
                 todo.push(work);
             }
 
-            let replacementPromises = todo.map((info) => {
-                let name = (info.name[0] === '/')
-                    ? publicDir + info.name 
-                    : (parent + '/' + info.name);
+            let replacementPromises = todo.map((work) => {
+                let name = (work.name[0] === '/')
+                    ? publicDir + work.name 
+                    : (parent + '/' + work.name);
                 console.log('including ', name);
                 return preprocessFile(name, includeStack.slice())
                 .catch((err) => {
