@@ -5,7 +5,7 @@
   "main": "test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "rerun": "node_modules/.bin/nodemon test.js",
+    "rerun": "node_modules/.bin/nodemon -e js,jsx,ts,tsx,htm,html,css test.js",
     "run": "node test.js"
   },
   "author": "",
